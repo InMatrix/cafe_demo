@@ -94,6 +94,9 @@ class CafeDemoState extends State<CafeDemo> {
           setState(() {
             review.isHelpful = isHelpful;
           });
+          scaffoldKey.currentState.showSnackBar(new SnackBar(
+            content: new Text('Thank you for voting!')
+          ));
         }
       );
     }).toList());
@@ -114,22 +117,6 @@ class CafeDemoState extends State<CafeDemo> {
                 config.cafe.isFavorite = true;
               });
             }
-          ),
-          new PopupMenuButton<CafeDemoAction>(
-            onSelected: (CafeDemoAction value) {
-              final String message = 'You selected $value';
-              scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(message)));
-            },
-            itemBuilder: (BuildContext context) => <PopupMenuItem<CafeDemoAction>>[
-              new PopupMenuItem<CafeDemoAction>(
-                value: CafeDemoAction.writeReview,
-                child: new Text('Write a review')
-              ),
-              new PopupMenuItem<CafeDemoAction>(
-                value: CafeDemoAction.checkIn,
-                child: new Text('Check in')
-              )
-            ]
           )
         ]
       ),
