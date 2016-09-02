@@ -110,11 +110,11 @@ class CafeDemoState extends State<CafeDemo> {
         ),
         actions: <Widget>[
           new IconButton(
-            icon: new Icon(Icons.favorite),
+            icon: new Icon(config.cafe.isFavorite ? Icons.favorite : Icons.favorite_border),
             tooltip: 'Favorite',
             onPressed: () {
               setState(() {
-                config.cafe.isFavorite = true;
+                config.cafe.isFavorite = !config.cafe.isFavorite;
               });
             }
           )
