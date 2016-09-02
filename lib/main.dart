@@ -71,7 +71,8 @@ class CafeDemoState extends State<CafeDemo> {
             new ListItem(
               title: new Text('${config.cafe.address[0]}'),
               subtitle: new Text('${config.cafe.address[1]}'),
-              leading: new SizedBox(width: 24.0, height: 24.0),
+              // leading: new SizedBox(width: 24.0, height: 24.0),
+              leading: new Icon(Icons.local_dining, color: themeData.primaryColor),
             ),
             new Divider(),
             new ListItem(
